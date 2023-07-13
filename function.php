@@ -5,7 +5,7 @@
 if(isset($_POST['submit'])) {
  
     $upload_dir = 'uploads'.DIRECTORY_SEPARATOR;
-    $allowed_types = array('jpg', 'png', 'jpeg', 'gif');
+    $allowed_types = array('jpg', 'png', 'jpeg', 'gif','py');
      
     $maxsize = 2 * 1024 * 1024;
  
