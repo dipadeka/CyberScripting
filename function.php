@@ -5,7 +5,7 @@
 if(isset($_POST['submit'])) {
  
     $upload_dir = 'uploads'.DIRECTORY_SEPARATOR;
-    $allowed_types = array('jpg', 'png', 'jpeg', 'gif','py');
+    $allowed_types = array('jpg', 'png', 'jpeg', 'gif','py','txt');
      
     $maxsize = 2 * 1024 * 1024;
     $domainName = $_POST['domainName'];
