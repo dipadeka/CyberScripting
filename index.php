@@ -62,35 +62,24 @@
       </div>
 
       <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-md-2 ">
+        <div class="col-md-4 ">
         </div>
-        <div class="col-md-8 text-center">
+        <div class="col-md-4 ">
         <form action="function.php" method="POST"
             enctype="multipart/form-data">
-            <div class="row">
-              <div class="col-md-4">
-                <label class="color_white">
-                  Enter the domain</label>
-
-              </div>
-              <div class="col-md-4">
-                <input type="text" name="domainName" class="form-control" />
-              </div>
-              <div class="col-md-4">
-                
-            <input type="file" name="files[]" multiple>
-              </div>
-            </div>
-            <div class="row mt-2">
-              <div class="col-md-4">
-              </div>
-              <div class="col-md-8">
-              <input type="submit" name="submit" value="Upload" >
-              </div>
-            </div>
-          </form>
+          <div class="form-group">
+            <label for="exampleInputDomain" class="color_white">Enter the domain</label>
+            <input type="text" class="form-control" id="exampleInputDomain" aria-describedby="domainHelp" name="domainName" placeholder="Enter the domain name">
+            <small id="domainHelp" class="form-text color_white">We'll never share your ouput with anyone else.</small>
+          </div>
+          <div class="form-group mt-3">
+            <input class="form-control col-12" type="file" name="files[]" multiple>
+          </div>
+          <button type="submit" name="submit" class="btn btn-primary w-100 mt-4">Submit</button>
+        </form>
+       
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4">
         </div>
 
       </div>

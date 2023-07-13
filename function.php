@@ -8,7 +8,8 @@ if(isset($_POST['submit'])) {
     $allowed_types = array('jpg', 'png', 'jpeg', 'gif','py');
      
     $maxsize = 2 * 1024 * 1024;
- 
+    $domainName = $_POST['domainName'];
+    // echo "domianNAme {$domainName}";
     // Checks if user sent an empty form
     if(!empty(array_filter($_FILES['files']['name']))) {
  
@@ -26,18 +27,22 @@ if(isset($_POST['submit'])) {
 
                 if(file_exists($filepath)) {
                     $filepath = $upload_dir.time().$file_name;
-                     
                     if( move_uploaded_file($file_tmpname, $filepath)) {
-                        echo "{$file_name} successfully uploaded <br />";
+                        // echo "{$file_name} { $filepath}  successfully uploaded <br />";
+                        $command = escapeshellcmd("python {$filepath} {$domainName}");
+                        $output = shell_exec($command);
+                        echo $output;
                     }
                     else {                    
                         echo "Error uploading {$file_name} <br />";
                     }
                 }
                 else {
-                 
                     if( move_uploaded_file($file_tmpname, $filepath)) {
-                        echo "{$file_name} successfully uploaded <br />";
+                        // echo "{$file_name} {$filepath}  successfully uploaded <br />";
+                        $command = escapeshellcmd("python {$filepath} {$domainName}");
+                        $output = shell_exec($command);
+                        echo $output;
                     }
                     else {                    
                         echo "Error uploading {$file_name} <br />";
@@ -49,6 +54,7 @@ if(isset($_POST['submit'])) {
                 echo "({$file_ext} file type is not allowed)<br / >";
             }
         }
+
     }
     else {
         echo "No files selected.";
